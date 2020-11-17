@@ -41,3 +41,18 @@ Enfin, nous avons récupéré un jeu de données au format **.geojson** qui nous
 
 **En voici le résultat :**
 
+![Nombre de Airbnb par section cadastrale à Aix-en-Provence](https://raw.githubusercontent.com/maeliscln/Donnees-mediations/main/Nombre%20de%20logements%20Airbnb%20par%20section%20cadastrale%20(2017).png)
+
+Grâce à cette dernière visualisation, nous constatons donc que les parcelles qui concentrent le plus de logements Airbnb sont **les 13 sections cadastrales qui composent le centre-ville**. Nous pensions, à l’origine, que beaucoup de logements disponibles à la location sur Airbnb seraient plutôt des logements aux surfaces généreuses, comme des villas familiales situées aux alentours d’Aix-en-Provence. En fait, ce qui ressort de la dernière carte confirme plutôt l’idée selon laquelle *Airbnb* vient **aggraver la pénurie de logements étudiants dans le centre-ville d’Aix**, car la majorité du parc de logements disponible sur Airbnb concerne des studios dans le centre-ville. Il est certainement plus rentable pour les propriétaires de consacrer leurs logements à la location touristique sur Airbnb plutôt qu’à des locations étudiantes annuelles. Pour autant, ces studios manquent pour de nombreux étudiants qui se voient obligés d’habiter en périphérie d’Aix-en-Provence, faute d’avoir réussi à trouver un logement dans le centre-ville. Notons cependant que la crise sanitaire, qui a fortement attaqué le secteur touristique, permettra peut-être d’inverser la tendance.
+
+## La boîte noire
+
+Une boîte noire, pour conclure, afin de mettre en exergue les difficultés rencontrées pendant cette étude.
+
+La **première** est apparue lorsque nous avons voulu exploiter les données sur la valeur foncière de data.gouv : nous avons remarqué un fort écart de prix entre 2018 et 2019. Il s’agissait d’une augmentation bien trop importante pour être vérifiée dans les faits, ce qui nous a poussés à questionner la fiabilité de la base de données. En parcourant le tableau, nous nous sommes rendus compte que de nombreux doublons apparaissent. En fait, ces doublons étaient le résultat d’une duplication des dispositions par mutations : par exemple, la mutation (le bien immobilier) numéro 2013P00181 correspondait à 8 dispositions, soient autant de parcelles qui composent le bien. Dès lors, il s’agissait de dédupliquer puis de recalculer les moyennes de prix pour chaque année. Pour cela, nous avons utilisé l’outil workbenchdata.com.
+
+**Deuxième difficulté** : un problème d'échelle se posait pour le troisième graphique. Les valeurs oscillant entre 2.000 et 6.000 pour le nombre de *Airbnb* contre 200.000 à 400.000 pour les DVF, il apparaissait difficile de les regrouper de façon lisible dans un seul et même graphique. Nous avons donc fait le choix de renseigner les valeurs DVF **en € divisé par 100** afin qu’elles rentrent dans la même échelle que le nombre de logements *Airbnb*.
+
+In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends
+of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to
+eat: it was a [hobbit-hole](https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"), and that means comfort.
