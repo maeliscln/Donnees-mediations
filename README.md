@@ -28,3 +28,12 @@ En calculant le pourcentage d’augmentation pour nos deux indicateurs entre 201
 ## L'influence des zones géographiques
 
 Nous voulions produire des visualisations de données qui contenaient une composante géographique, afin de montrer, le cas échéant, si certains quartiers d’Aix-en-Provence subissent davantage que d’autres les effets de l’*airbnbsation*. Nous avons d’abord réalisé une simple carte grâce au logiciel **Khartis** développé par Sciences Po Paris pour comprendre où se situaient tous les logements *Airbnb* disponibles en octobre 2016, grâce aux coordonnées géographiques contenues dans notre jeu de données initial (latitude et longitude). Voici le résultat obtenu : 
+
+![Localisation des logements Airbnb disponibles à Aix-en-Provence](https://raw.githubusercontent.com/maeliscln/Donnees-mediations/main/Localisation%20des%20logements%20Airbnb%20disponibles%20a%CC%80%20Aix-en-Provence%20(2016).png)
+
+Le problème de cette visualisation est qu’elle ne nous donne aucune information sur la répartition géographique des logements en fonction des sections cadastrales. Cela ne nous permet donc pas de savoir quels peuvent être les logements situés dans le centre-ville d’Aix-en-Provence qui auraient éventuellement pu être disponibles pour des locations étudiantes s’ils n’avaient pas été destinés à la location *Airbnb*.
+
+Pour cela, nous avons donc récupéré un jeu de données qui listait les sections cadastrales à l’échelle de la municipalité d’Aix-en-Provence, ce qui nous a permis de calculer, grâce à un tableau croisé dynamique, combien de logements *Airbnb* comprenait chaque section cadastrale.
+
+Enfin, nous avons récupéré un jeu de données au format **.geojson** qui nous permettait d’importer, dans **Khartis**, un fond de carte par sections cadastrales. Ainsi, nous avons pu exploiter notre jeu de données pour faire varier les couleurs sur notre carte finale en fonction d’un critère essentiel : le nombre de logements *Airbnb* disponibles par section cadastrale. Voici le résultat obtenu :
+
